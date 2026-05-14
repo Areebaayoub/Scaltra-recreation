@@ -1,0 +1,37 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth; /* One-page scroll ke liye zaroori hai */
+}/* --- PREMIUM LILAC GRADIENT SCROLLBAR --- */
+
+/* 1. Scrollbar ki width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* 2. Track (Peechay wala hissa) - Isay dark rakha hai taake premium lagay */
+::-webkit-scrollbar-track {
+  background: #050505; 
+}
+
+/* 3. Thumb (Jo hissa move hota hai) */
+::-webkit-scrollbar-thumb {
+  /* Lilac to Purple Gradient match kar raha hai aapke theme se */
+  background: linear-gradient(to bottom, #ac88ff, #8B5CF6);
+  border-radius: 20px;
+  /* Halka sa border taake track se alag nazar aaye */
+  border: 2px solid #050505;
+}
+
+/* 4. Hover effect - thora sa bright ho jayega jab mouse le jayengi */
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(to bottom, #bd9fff, #7c3aed);
+}
+
+/* Firefox ke liye (limited support but still looks good) */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #8B5CF6 #050505;
+}
