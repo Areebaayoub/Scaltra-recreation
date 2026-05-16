@@ -1,98 +1,85 @@
 import React from 'react';
 
 const Process = () => {
-  const steps = [
+  const processData = [
     {
       step: "Step 1",
       title: "Strategy Session",
       description: "We understand your business, your goals, and your growth potential.",
-      graphic: (
-        <div className="bg-[#111111] rounded-xl p-4 border border-white/5 space-y-3 h-full">
-            {[1, 2, 3].map((item) => (
-                <div key={item} className="flex items-center gap-3">
-                    <div className="w-3 h-3 rounded-full bg-purple-500/20 border border-purple-500/50 flex items-center justify-center">
-                        <div className="w-1.5 h-1.5 bg-purple-400 rounded-full"></div>
-                    </div>
-                    <div className="h-1.5 bg-white/10 rounded w-full"></div>
-                </div>
-            ))}
-            <div className="h-1.5 bg-white/5 rounded w-2/3 ml-6"></div>
-        </div>
-      )
+      image: "https://scaltra.io/wp-content/uploads/2026/02/Capture2.jpg"
     },
     {
       step: "Step 2",
       title: "Execution",
       description: "We implement marketing, apps, websites, and design that actually generate revenue.",
-      graphic: (
-        <div className="bg-[#0a0a0a] rounded-xl p-4 border border-white/5 font-mono text-[10px] text-gray-400 h-full">
-            <div className="flex gap-1.5 mb-2">
-                <div className="w-2 h-2 rounded-full bg-red-500/50"></div>
-                <div className="w-2 h-2 rounded-full bg-yellow-500/50"></div>
-                <div className="w-2 h-2 rounded-full bg-green-500/50"></div>
-            </div>
-            <p className="text-purple-400">class <span className="text-blue-400">GrowthEngine</span>:</p>
-            <p className="pl-3">def <span className="text-yellow-200">execute</span>(self):</p>
-            <p className="pl-6 text-green-400">return "More Revenue"</p>
-        </div>
-      )
+      image: "https://scaltra.io/wp-content/uploads/2026/02/CODE.gif"
     },
     {
       step: "Step 3",
       title: "Results",
       description: "More leads, more sales, more growth. You see measurable results fast.",
-      graphic: (
-        <div className="bg-[#111111] rounded-xl p-4 border border-white/5 h-full flex items-end gap-2">
-             <div className="w-full bg-purple-900/30 rounded-t-sm h-1/3 hover:bg-purple-500/40 transition-colors"></div>
-             <div className="w-full bg-purple-800/40 rounded-t-sm h-1/2 hover:bg-purple-500/50 transition-colors"></div>
-             <div className="w-full bg-purple-600/50 rounded-t-sm h-3/4 hover:bg-purple-500/70 transition-colors"></div>
-             <div className="w-full bg-purple-500 rounded-t-sm h-full shadow-[0_0_15px_rgba(139,92,246,0.4)]"></div>
-        </div>
-      )
+      image: "https://scaltra.io/wp-content/uploads/2026/02/SLACK.gif"
     }
   ];
 
   return (
-    // UPDATED: py-24 ki jagah py-12 kar diya taake top/bottom space kam ho jaye
-    <section className="py-12 px-6 max-w-7xl mx-auto w-full overflow-hidden">
+    <section className="w-full bg-[#000] font-['Figtree'] py-[80px] md:py-[100px] px-[20px] overflow-hidden">
       
-      {/* Header */}
-      <div className="flex flex-col items-center text-center mb-10 w-full"> {/* mb-16 se mb-10 */}
-         <div className="inline-block border border-white/10 rounded-lg px-4 py-1.5 mb-5 bg-[#0a0a0a]">
-             <span className="text-gray-200 text-xs font-medium tracking-wide">Our Process</span>
-         </div>
-         
-         {/* Font size thora adjust kiya taake screen par easily fit ho */}
-         <h2 className="text-3xl md:text-4xl lg:text-[46px] xl:text-[50px] font-medium tracking-tight text-white lg:whitespace-nowrap w-full">
-             Our Growth Process is Simple, Proven, and Fast
-         </h2>
+      {/* --- HEADER SECTION --- */}
+      <div className="max-w-[1200px] mx-auto flex flex-col items-center text-center mb-[50px]">
+        
+        {/* Main Badge */}
+        <div className="mb-[20px]">
+           <span className="inline-block bg-[#0b0b0f] border border-white/10 text-white text-[12px] font-medium py-[6px] px-[16px] rounded-[4px] tracking-wide">
+              Our Process
+           </span>
+        </div>
+
+        {/* --- EXACT FIX FROM DEVTOOLS SCREENSHOT --- */}
+        {/* Font-weight 400, Desktop 50px, Mobile 24px */}
+        <h2 className="text-[#ffffff] font-[400] text-[24px] md:text-[50px] leading-[1.2] tracking-tight">
+          Our Growth Process is Simple, Proven, and Fast
+        </h2>
+
       </div>
 
-      {/* Process Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
-         {steps.map((item, index) => (
-             // UPDATED: p-8 ki jagah p-6 kar diya taake card compact lagay
-             <div key={index} className="bg-[#050505] border border-white/10 rounded-2xl p-6 flex flex-col h-full hover:border-white/20 transition-colors duration-300">
-                 
-                 <div className="inline-block bg-[#111] border border-white/5 rounded-md px-3 py-1 text-xs font-medium text-white mb-5 self-start">
-                     {item.step}
-                 </div>
-                 
-                 <h3 className="text-2xl md:text-[28px] font-medium tracking-tight text-white mb-2">
-                     {item.title}
-                 </h3>
-                 
-                 <p className="text-[#a1a1aa] text-[15px] leading-relaxed mb-6 flex-grow">
-                     {item.description}
-                 </p>
-                 
-                 {/* UPDATED: Height h-40 se kam kar ke h-32 kar di */}
-                 <div className="h-32 w-full mt-auto">
-                     {item.graphic}
-                 </div>
-                 
-             </div>
-         ))}
+      {/* --- 3-COLUMN PROCESS GRID --- */}
+      <div className="max-w-[1200px] mx-auto grid grid-cols-1 md:grid-cols-3 gap-[24px]">
+        {processData.map((item, index) => (
+          <div 
+            key={index} 
+            className="bg-[#080808] border border-white/[0.08] rounded-[24px] px-[30px] py-[12px]  flex flex-col items-start text-left hover:border-white/20 transition-all duration-300"
+          >
+            
+            {/* Step Badge */}
+            <div className="mb-[25px]">
+              <span className="inline-block bg-[#161616] border border-white-[0.05] text-[#e2e8f0] text-[11px] font-semibold py-[6px] px-[12px] rounded-[6px]">
+                {item.step}
+              </span>
+            </div>
+
+            {/* --- FIX: Card Title --- */}
+            {/* Removed Rethink Sans, using default Figtree with 400 weight */}
+            <h3 className="text-white font-[400] text-[24px] md:text-[35px] tracking-tight mb-[15px]">
+              {item.title}
+            </h3>
+
+            {/* Card Description */}
+            <p className="text-white font-[400] text-[15px] md:text-[16px] leading-[1.6] mb-[35px] flex-grow">
+              {item.description}
+            </p>
+
+            {/* Images/GIFs */}
+            <div className="w-full mt-auto">
+              <img 
+                src={item.image} 
+                alt={item.title} 
+                className="w-full rounded-[12px] object-cover border border-white/5 opacity-90 hover:opacity-100 transition-opacity duration-300"
+              />
+            </div>
+
+          </div>
+        ))}
       </div>
 
     </section>

@@ -1,8 +1,7 @@
-/** @type {import('tailwindcss').Config} */
-export default {
+//** @type {import('tailwindcss').Config} */
+module.exports = {
   content: [
-    "./index.html",
-    "./src/**/*.{js,ts,jsx,tsx}",
+    "./src/**/*.{js,jsx,ts,tsx}",
   ],
   theme: {
     extend: {
@@ -12,7 +11,7 @@ export default {
         brandDark: '#111111', // Cards background
       },
       fontFamily: {
-        sans: ['Inter', 'sans-serif'], // Professional font
+        sans: ['Figtree', 'sans-serif'], // Updated to Scaltra's exact font
       }
     },
   },

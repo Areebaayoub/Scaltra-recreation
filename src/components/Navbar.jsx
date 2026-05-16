@@ -2,29 +2,59 @@ import React from 'react';
 
 const Navbar = () => {
   return (
-    <nav className="fixed w-full top-0 z-50 bg-[#050505]/80 backdrop-blur-md border-b border-white/5">
-      <div className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
-        {/* Logo */}
-        <div className="text-2xl font-black text-white flex items-center gap-2 cursor-pointer">
-            <div className="w-8 h-8 bg-gradient-to-br from-purple-500 to-purple-700 rounded flex items-center justify-center transform rotate-12">
-               <span className="-rotate-12 text-white text-sm">S</span>
-            </div>
-            <span className="tracking-wide">Scaltra</span>
-        </div>
+    // position-absolute locked: scrolling par sath neechay nahi aayega, sirf top par rahega
+    // Added a sleek bottom border line to mimic the original image design perfectly
+    <nav className="absolute top-0 left-0 w-full z-50 bg-transparent font-['Figtree'] py-[24px] px-[20px] md:px-[40px] border-b border-white/[0.08]">
+      <div className="max-w-[1200px] mx-auto flex items-center justify-between">
         
-        {/* Links */}
-        <div className="hidden md:flex gap-8 text-sm font-medium text-gray-400">
-          <a href="#home" className="hover:text-white transition-colors duration-300">Home</a>
-          <a href="#about" className="hover:text-white transition-colors duration-300">About</a>
-          <a href="#services" className="hover:text-white transition-colors duration-300">Services ▾</a>
-          <a href="#case-studies" className="hover:text-white transition-colors duration-300">Case Studies</a>
-          <a href="#contact" className="hover:text-white transition-colors duration-300">Contact</a>
+        {/* --- LOGO SECTION (FIXED: BARA LOGO & TEXT REMOVED) --- */}
+        {/* Dimensions scaled up to match the elegant, large icon presence */}
+        <a href="#home" className="flex items-center">
+          <img 
+            src="https://scaltra.io/wp-content/uploads/2026/02/scaltra-logo-10-scaled.png" 
+            alt="Scaltra Logo" 
+            className="w-[55px] h-[55px] md:w-[65px] md:h-[65px] object-contain transition-transform hover:scale-105"
+          />
+        </a>
+
+        {/* --- LINKS LIST (WORKABLE WITH SMOOTH SCROLL ANCHORS) --- */}
+        <div className="hidden md:flex items-center gap-[30px]">
+          {/* #home targets your hero section */}
+          <a href="#home" className="text-white hover:text-[#8B5CF6] text-[14.5px] font-medium transition-colors">
+            Home
+          </a>
+          
+          {/* #about targets your About section */}
+          <a href="#about" className="text-white hover:text-[#8B5CF6] text-[14.5px] font-medium transition-colors">
+            About
+          </a>
+          
+          {/* #services targets your Process/Services section */}
+          <a href="#services" className="text-white hover:text-[#8B5CF6] text-[14.5px] font-medium transition-colors">
+            Services
+          </a>
+
+          {/* #case-studies targets your Case Studies section */}
+          <a href="#case-studies" className="text-white hover:text-[#8B5CF6] text-[14.5px] font-medium transition-colors">
+            Case Studies
+          </a>
+          
+          {/* #contact targets your Contact section */}
+          <a href="#contact" className="text-white hover:text-[#8B5CF6] text-[14.5px] font-medium transition-colors">
+            Contact
+          </a>
         </div>
-        
-        {/* Button */}
-        <button className="hidden md:block bg-purple-600 hover:bg-purple-500 text-white text-sm font-semibold py-2.5 px-6 rounded-lg shadow-[0_0_15px_rgba(168,85,247,0.4)] hover:shadow-[0_0_25px_rgba(168,85,247,0.6)] transition-all duration-300">
-          Book A Call
-        </button>
+
+        {/* --- CALL CTA BUTTON --- */}
+        <div>
+          <a 
+            href="#contact" 
+            className="bg-[#8B5CF6] hover:bg-[#7c3aed] text-white text-[13.5px] font-medium py-[8px] px-[18px] rounded-[6px] transition-transform hover:scale-105 inline-block"
+          >
+            Book A Call
+          </a>
+        </div>
+
       </div>
     </nav>
   );
